@@ -395,7 +395,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -421,7 +421,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.08113261, y: -0, z: -0, w: 0.9967034}
-  m_LocalPosition: {x: 0, y: 4.200001, z: -18.9}
+  m_LocalPosition: {x: -0, y: 5.6, z: -25.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1219603536}
@@ -608,7 +608,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 375048611733982034, guid: e2de7277ccfbeee4d85cb94177c4a9c5, type: 3}
       propertyPath: m_Name
-      value: StarSparrow1
+      value: PlayerShip
       objectReference: {fileID: 0}
     - target: {fileID: 378000789099712874, guid: e2de7277ccfbeee4d85cb94177c4a9c5, type: 3}
       propertyPath: m_RootOrder
@@ -620,7 +620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 378000789099712874, guid: e2de7277ccfbeee4d85cb94177c4a9c5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 378000789099712874, guid: e2de7277ccfbeee4d85cb94177c4a9c5, type: 3}
       propertyPath: m_LocalPosition.z
