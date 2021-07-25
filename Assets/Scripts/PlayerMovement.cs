@@ -11,12 +11,15 @@ public class PlayerMovement : MonoBehaviour
     float controlSpeed = 50f;
     float verticalThrow;
     float horizontalThrow;
+
+    ParticleSystem[] laserSytem;
+    bool isLaserSystemRunning;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        laserSytem = GetComponentsInChildren<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -24,6 +27,36 @@ public class PlayerMovement : MonoBehaviour
     {
         ProcessTranslation();
         ProcessRotation();
+        ProcessFiring();
+    }
+
+    void ProcessFiring()
+    {
+        if(Input.GetKey(KeyCode.Space))
+        {
+            Debug.Log("Space pressed");
+            if (!isLaserSystemRunning)
+            {
+                foreach (var laser in laserSytem)
+                {
+                    Debug.Log("playing laser " + laser.name);
+                    laser.Play();
+                }
+                isLaserSystemRunning = true;
+            }
+        }
+        else
+        {
+            if(isLaserSystemRunning)
+            {
+                foreach (var laser in laserSytem)
+                {
+                    Debug.Log("stopping laser " + laser.name);
+                    laser.Stop();
+                }
+                isLaserSystemRunning = false;
+            }
+        }
     }
 
     void ProcessRotation()
@@ -31,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         float pitch = GetPitch();
         float roll = GetRoll();
         float yaw = GetYaw();
-        transform.localRotation = Quaternion.Euler(pitch, yaw, roll);// yaw, roll);
+        transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
     }
 
     float GetRoll()
